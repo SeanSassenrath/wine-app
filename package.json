@@ -9,7 +9,7 @@
     "clean": "rimraf artifacts",
     "build": "npm run clean && npm run tsc --",
 		"lint": "tslint src/**/*.ts",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "react": "16.0.0-alpha.12",
