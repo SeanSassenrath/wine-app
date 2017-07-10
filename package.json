@@ -8,6 +8,7 @@
 		"tsc": "tsc",
     "clean": "rimraf artifacts",
     "build": "npm run clean && npm run tsc --",
+		"lint": "tslint src/**/*.ts",
     "test": "jest"
   },
   "dependencies": {
