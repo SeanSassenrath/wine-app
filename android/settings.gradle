@@ -1,0 +1,3 @@
+rootProject.name = 'WineApp'
+
+include ':app'
