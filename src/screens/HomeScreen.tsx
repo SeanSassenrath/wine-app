@@ -2,10 +2,25 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 
-export default class FirstTabScreen extends Component {
+interface HomeScreenProps {
+  navigator: any; // No types for React Native Navigation
+}
+
+export default class HomeScreen extends Component<HomeScreenProps, {}> {
+
+  constructor(props) {
+    super(props);
+    this.goToSecondTab = this.goToSecondTab.bind(this);
+  }
+
+  goToSecondTab(): void {
+    this.props.navigator.push({ screen: 'example.SecondTabScreen'});
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -15,6 +30,7 @@ export default class FirstTabScreen extends Component {
         <Text style={styles.instructions}>
           This is page one.
         </Text>
+        <Button title='click me' onPress={this.goToSecondTab}>Click me</Button>
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu

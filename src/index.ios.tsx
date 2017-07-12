@@ -8,7 +8,7 @@ Navigation.startTabBasedApp({
   tabs: [
     {
       label: 'One',
-      screen: 'example.FirstTabScreen', // this is a registered name for a screen
+      screen: 'taste.HomeScreen', // this is a registered name for a screen
       // icon: require('../img/one.png'),
       // selectedIcon: require('../img/one_selected.png'), // iOS only
       title: 'Screen One'
