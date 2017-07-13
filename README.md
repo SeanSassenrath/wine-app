@@ -3,7 +3,13 @@
 ### Typescript for React Native
 [Resource](https://medium.com/@rintoj/react-native-with-typescript-40355a90a5d7)
 
-### React Native Navigation (Wix)
+## Navigation
+
+### React Navigation
+[Resource](https://github.com/react-community/react-navigation)
+
+### NOT USING: React Native Navigation (Wix)
+Doesn't offer enough customizability. Only provides tab and single screen nav layouts.
 [Resource](https://wix.github.io/react-native-navigation/#/)
 
 ### Splashscreen
