@@ -5,7 +5,9 @@ import { StackNavigator } from 'react-navigation';
 import { HomeScreen } from '../screens/HomeScreen';
 
 export const TasteApp = StackNavigator({
-  Home: { screen: HomeScreen }
+  Home: { screen: HomeScreen}
+}, {
+  headerMode: 'none'
 });
 
 // import React from 'react';

@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
 import {
+  StyleSheet,
   Text,
   View
 } from 'react-native';
 
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'green',
+    flex: 1
+  },
+  textContainer: {
+    margin: 50
+  }
+});
+
 export class HomeScreen extends Component {
+  static navigationOptions = {
+    header: null
+  };
+
   render() {
     return (
-      <View>
-        <Text>This will be the best wine app ever!</Text>
+      <View style={styles.container}>
+        <Text style={styles.textContainer}>This will be the best wine app ever!</Text>
       </View>
     );
   }
