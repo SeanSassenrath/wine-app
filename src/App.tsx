@@ -1,23 +1,6 @@
-import React, { Component } from 'react';
 import {
-  AppRegistry,
-  View,
-  Text
+  AppRegistry
 } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { TasteApp } from './navigators/AppNavigator';
 
-class HomeScreen extends Component {
-  render() {
-    return (
-      <View>
-        <Text>This will be the best wine app ever!</Text>
-      </View>
-    );
-  }
-}
-
-const TasteApp = StackNavigator({
-  Home: { screen: HomeScreen }
-});
-
-AppRegistry.registerComponent('WineApp', () => TasteApp);
+AppRegistry.registerComponent('WineApp', (): any => TasteApp);
