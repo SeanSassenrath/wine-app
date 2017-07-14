@@ -4,18 +4,31 @@ import {
   Text,
   View
 } from 'react-native';
+import { CircleButton } from '../components/CircleButton';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'green',
-    flex: 1
+    backgroundColor: '#903f5d',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   textContainer: {
     margin: 50
+  },
+  buttonTextSmall: {
+    fontSize: 18,
+    color: 'white',
+    opacity: .9
+  },
+  buttonTextLarge: {
+    fontSize: 45,
+    color: 'white',
+    opacity: .9
   }
 });
 
-export class HomeScreen extends Component {
+export class HomeScreen extends Component<{}, {}> {
   static navigationOptions = {
     header: null
   };
@@ -23,7 +36,10 @@ export class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.textContainer}>This will be the best wine app ever!</Text>
+        <CircleButton onPress={() => console.log('hi')}>
+          <Text style={styles.buttonTextSmall}>{'Build My'.toUpperCase()}</Text>
+          <Text style={styles.buttonTextLarge}>{'Trip'.toUpperCase()}</Text>
+        </CircleButton>
       </View>
     );
   }
