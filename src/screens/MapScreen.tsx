@@ -1,76 +1,66 @@
 import React, { Component } from 'react';
 import {
+  AppRegistry,
   StyleSheet,
+  Dimensions,
   Text,
   View
 } from 'react-native';
 
-const styles = StyleSheet.create({
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
-});
+const { width, height } = Dimensions.get('window');
 
-export class MapScreen extends Component<{}, {}> {
-  static navigationOptions = {
-    header: null
-  };
+const ASPECT_RATIO = width / height;
+const LATITUDE = 37.78825;
+const LONGITUDE = -122.4324;
+const LATITUDE_DELTA = 0.0922;
+const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+
+export class MapScreen extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+    };
+  }
 
   render() {
     return (
-      <View>
+      <View style={{ flex: 1 }}>
+        <View style={{ backgroundColor: 'green', height: 100, justifyContent: 'center', alignItems: 'center'}}>
+          <Text>Some div</Text>
+        </View>
+        <View style={styles.container}>
+          <MapView
+            provider={PROVIDER_GOOGLE}
+            style={styles.map}
+            initialRegion={{
+              latitude: LATITUDE,
+              longitude: LONGITUDE,
+              latitudeDelta: LATITUDE_DELTA,
+              longitudeDelta: LONGITUDE_DELTA
+            }}
+          />
+        </View>
       </View>
     );
   }
 }
 
-// interface HomeScreenProps {
-//   navigator: any; // No types for React Native Navigation
-// }
+// GoogleMapPlayground.propTypes = {
+//   provider: MapView.ProviderPropType,
+// };
 
-// export default class HomeScreen extends Component<HomeScreenProps, {}> {
-
-//   constructor(props) {
-//     super(props);
-//     this.goToSecondTab = this.goToSecondTab.bind(this);
-//   }
-
-//   goToSecondTab(): void {
-//     this.props.navigator.push({ screen: 'example.SecondTabScreen'});
-//   }
-
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text style={styles.welcome}>
-//           Welcome to React Native Page 1!
-//         </Text>
-//         <Text style={styles.instructions}>
-//           This is page one.
-//         </Text>
-//         <Button title='click me' onPress={this.goToSecondTab}>Click me</Button>
-//         <Text style={styles.instructions}>
-//           Press Cmd+R to reload,{'\n'}
-//           Cmd+D or shake for dev menu
-//         </Text>
-//       </View>
-//     );
-//   }
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF'
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#333333',
-//     marginBottom: 5
-//   }
-// });
+const styles = StyleSheet.create({
+  container: {
+    position: 'absolute',
+    top: 100,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    ...StyleSheet.absoluteFillObject as any
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject as any
+  }
+});

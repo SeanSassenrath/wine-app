@@ -3,6 +3,7 @@ import React from 'react';
 /* tslint:enable:no-unused-variable */
 import { StackNavigator } from 'react-navigation';
 import { HomeScreen } from '../screens/HomeScreen';
+// import { MapScreen } from '../screens/MapScreen';
 
 export const TasteApp = StackNavigator({
   Home: { screen: HomeScreen}
