@@ -12,6 +12,7 @@
     "test": "jest --coverage"
   },
   "dependencies": {
+    "@mapbox/polyline": "^0.2.0",
     "react": "16.0.0-alpha.12",
     "react-native": "0.46.1",
     "react-native-maps": "^0.15.3",
